@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const app = express()
 const port = process.env.PORT || 3000
 const userRouter = require('./route/user')
-mongoose.connect('mongodb+srv://taskapp:itsallawkward@cluster0-1efp0.mongodb.net/bit-bro?retryWrites=true&w=majority',{
+mongoose.connect(process.env.mongodb_url,{
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: true,
@@ -17,7 +17,7 @@ app.listen(port,()=>{
 })
 
 
-
+// mongodb+srv://taskapp:itsallawkward@cluster0-1efp0.mongodb.net/bit-bro?retryWrites=true&w=majority'
 
 
 // 2.1) POST /api/users - Get new user via JSON FormData
